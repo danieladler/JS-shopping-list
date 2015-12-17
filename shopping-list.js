@@ -30,25 +30,25 @@ window.onload = function () {
 
     // create new element that is a list item
     var newItem = document.createElement('li');
-    newItem.setAttribute('class','single-item')
+    newItem.setAttribute('class','single-item col-xs-10 col-xs-push-1')
     newItem.setAttribute('id','item')
 
     // add the divs that make up each list item
     // // add checkbox div to newItem
     var checkboxDiv = document.createElement("input");
-    checkboxDiv.className = "checkbox"
+    checkboxDiv.className = "checkbox col-xs-1"
     checkboxDiv.setAttribute('type','checkbox');
     newItem.appendChild(checkboxDiv);
 
     // // add item-name div where textContent (or innerHTML) = input.value
     var itemNameDiv = document.createElement("div");
-    itemNameDiv.className = "item-name"
+    itemNameDiv.className = "item-name col-xs-9"
     itemNameDiv.innerHTML = input.value
     newItem.appendChild(itemNameDiv);
 
     // // add remove button
     var removeButton = document.createElement("button");
-    removeButton.className = "btn btn-warning delete"
+    removeButton.className = "col-xs-1 col-xs-push-1 btn btn-warning delete"
     removeButton.innerHTML = "X"
     newItem.appendChild(removeButton);
 
