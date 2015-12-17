@@ -5,8 +5,8 @@
   border-bottom: 10px solid black;
 }
 
-.list-item-container {
-  /*padding-left: 0;*/
+.single-item * {
+  border: 1px solid red;
 }
 
 .list-item-container:first-child {
@@ -22,4 +22,8 @@
 .add-item-container {
   border: 1px solid red;
   padding-left: 15px;
+}
+
+form.col-lg-10 {
+  padding-left: 0px;
 }

@@ -48,7 +48,7 @@ window.onload = function () {
 
     // // add remove button
     var removeButton = document.createElement("button");
-    removeButton.className = "btn delete"
+    removeButton.className = "btn btn-warning delete"
     removeButton.innerHTML = "X"
     newItem.appendChild(removeButton);
 
@@ -72,19 +72,7 @@ window.onload = function () {
 
     // reset form values
     input.value = ""
+
+    input.focus();
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
