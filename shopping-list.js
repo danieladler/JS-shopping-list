@@ -35,9 +35,9 @@ window.onload = function () {
 
     // add the divs that make up each list item
     // // add checkbox div to newItem
-    var checkboxDiv = document.createElement("div");
+    var checkboxDiv = document.createElement("input");
     checkboxDiv.className = "checkbox"
-    checkboxDiv.innerHTML = "[ ]"
+    checkboxDiv.setAttribute('type','checkbox');
     newItem.appendChild(checkboxDiv);
 
     // // add item-name div where textContent (or innerHTML) = input.value
@@ -46,27 +46,24 @@ window.onload = function () {
     itemNameDiv.innerHTML = input.value
     newItem.appendChild(itemNameDiv);
 
-    // // add delete button
-    var deleteDiv = document.createElement("div");
-    deleteDiv.className = "delete"
-    deleteDiv.innerHTML = "X"
-    newItem.appendChild(deleteDiv);
+    // // add remove button
+    var removeButton = document.createElement("button");
+    removeButton.className = "btn delete"
+    removeButton.innerHTML = "X"
+    newItem.appendChild(removeButton);
 
     // add the event listeners to each div for interactivity
-    // // add event listener to checkbox to mark complete on click
+    // // checkbox marks <li> complete on click, as well as
+    // // turn <li> grey and move it to the end of the list
     checkboxDiv.addEventListener("click", function () {
-      // this. change to complete
+      this.parentNode.getElementsByClassName("item-name")[0].style.color="grey";
+      newItem.parentNode.insertBefore(newItem,this.parentNode.lastChild.nextSibling);
     });
 
-    // // add event listener to item-name to turn grey on click
-    itemNameDiv.addEventListener("click", function () {
-      this.style.color="grey"
-    });
-
-    // // add event listener to checkbox to mark complete on click
+    // // add event listener to delete button to remove item on click
     // // // NEXT, refactor this to replace X with confirm-delete button;
     // // // confirm-delete button then does an event like this to remove whole <li>
-    deleteDiv.addEventListener("click", function () {
+    removeButton.addEventListener("click", function () {
       this.parentNode.parentNode.removeChild(this.parentNode);
     });
 
