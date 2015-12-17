@@ -1,0 +1,25 @@
+.title {
+  font-size: 100px;
+  font-weight: 800;
+  text-align: center;
+  border-bottom: 10px solid black;
+}
+
+.list-item-container {
+  /*padding-left: 0;*/
+}
+
+.list-item-container:first-child {
+  margin-top: 10px;
+}
+
+.list-item-container li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  border: 1px solid red;
+}
+
+.add-item-container {
+  border: 1px solid red;
+  padding-left: 15px;
+}

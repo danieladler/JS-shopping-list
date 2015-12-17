@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>JS Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/master.css" media="screen" title="no title" charset="utf-8">
+    <script src="/shopping-list.js"></script>
+</head>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row title-row">
+        <div class="col-lg-10 col-lg-push-1 title">
+          <span>LET'S BUY STUFF</span>
+        </div>
+      </div>
+      <div class="row item-list-row">
+        <ul id="list" class="col-lg-10 col-lg-push-1 list-item-container">
+          <li class="single-item">
+            <div class="complete-box">
+              [ ]
+            </div>
+            <div class="item-name">
+              item name
+            </div>
+            <div class="delete-x">
+              X
+            </div>
+          </li>
+
+          <li class="single-item">
+            <div class="complete-box">
+              [ ]
+            </div>
+            <div class="item-name">
+              item name
+            </div>
+            <div class="delete-x">
+              X
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="row input-row">
+        <div class="col-lg-10 col-lg-push-1 add-item-container">
+          <form>
+            <input id="input" type="text" class="form-control">
+            <button id="submit" class="btn">Add Item</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
