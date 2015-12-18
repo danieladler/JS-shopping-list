@@ -56,7 +56,8 @@ window.onload = function () {
     // // checkbox marks <li> complete on click, as well as
     // // turn <li> grey and move it to the end of the list
     checkboxDiv.addEventListener("click", function () {
-      this.parentNode.getElementsByClassName("item-name")[0].style.color="grey";
+      this.parentNode.getElementsByClassName("item-name")[0].style.color="rgb(180, 180, 180)";
+      this.parentNode.getElementsByClassName("item-name")[0].style.textDecoration="line-through";
       newItem.parentNode.insertBefore(newItem,this.parentNode.lastChild.nextSibling);
     });
 
@@ -64,7 +65,15 @@ window.onload = function () {
     // // // NEXT, refactor this to replace X with confirm-delete button;
     // // // confirm-delete button then does an event like this to remove whole <li>
     removeButton.addEventListener("click", function () {
-      this.parentNode.parentNode.removeChild(this.parentNode);
+      newItem.removeChild(this);
+      var reallyRemove = document.createElement("button");
+      reallyRemove.className = "col-xs-1 col-xs-push-1 btn btn-danger"
+      reallyRemove.setAttribute("id","reallyRemove")
+      reallyRemove.innerHTML = "X!"
+      newItem.appendChild(reallyRemove);
+      reallyRemove.addEventListener("click", function() {
+        this.parentNode.parentNode.removeChild(this.parentNode);
+      });
     });
 
     // add entire new list item to end of list
