@@ -69,7 +69,7 @@ window.onload = function () {
       var reallyRemove = document.createElement("button");
       reallyRemove.className = "col-xs-1 col-xs-push-1 btn btn-danger"
       reallyRemove.setAttribute("id","reallyRemove")
-      reallyRemove.innerHTML = "X!"
+      reallyRemove.innerHTML = "X !"
       newItem.appendChild(reallyRemove);
       reallyRemove.addEventListener("click", function() {
         this.parentNode.parentNode.removeChild(this.parentNode);
@@ -81,7 +81,21 @@ window.onload = function () {
 
     // reset form values
     input.value = ""
-
     input.focus();
   });
+
+  // variables and events to change all items on list
+  wholeList = document.getElementsByClassName("single-item");
+
+  // remove all items
+  var clear = document.getElementById("clear");
+  clear.addEventListener("click", function () {
+    var i;
+    for (i = 0; i <= wholeList.length; i++) {
+      // console.log(wholeList[i]);
+      list.removeChild(wholeList[i]);
+    };
+    list.removeChild(wholeList[0]);
+  });
+
 }

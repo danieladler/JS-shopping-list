@@ -3,14 +3,11 @@
   font-weight: 800;
   text-align: center;
   border-bottom: 10px solid black;
+  margin-bottom: 15px;
 }
 
 .list-item-container {
   padding-left: 0;
-}
-
-.list-item-container:first-child {
-  margin-top: 15px;
 }
 
 .list-item-container li {
@@ -21,4 +18,8 @@
 
 .add-item-container {
   padding-left: 15px;
+}
+
+.change-all-row {
+  margin-top: 15px;
 }
