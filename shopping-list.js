@@ -4,29 +4,6 @@ window.onload = function () {
   var submit = document.getElementById("submit")
   var input  = document.getElementById("input")
 
-    // var realSubmit = document.getElementById("realSubmit")
-
-  // possible to set up functions for adding list-item sub-divs upon 'add item'
-  // submit, instead of calling entire functions & assignment within the click?
-
-  // var addCheckBoxDiv = function() {
-  //   checkboxDiv = document.createElement("div");
-  //   checkboxDiv.className = "checkbox"
-  //   checkboxDiv.innerHTML = "[ ]"
-  // }
-  //
-  // var addItemNameDiv = function() {
-  //   itemNameDiv = document.createElement("div");
-  //   itemNameDiv.className = "item-name"
-  //   itemNameDiv.innerHTML = input.value
-  // }
-  //
-  // var addDeleteDiv = function() {
-  //   deleteDiv   = document.createElement("div");
-  //   deleteDiv.className = "delete"
-  //   deleteDiv.innerHTML = "X"
-  // }
-
   submit.addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -88,6 +65,18 @@ window.onload = function () {
   });
 
   // variables and events to change all items on list
+
+  // mark all items complete
+  var allComplete = document.getElementById("allComplete");
+  allComplete.addEventListener("click", function () {
+    var wholeList = document.getElementsByTagName("li");
+    var i;
+    for (i = 0; i < wholeList.length; i++) {
+      wholeList[i].getElementsByClassName("item-name")[0].style.color="rgb(180, 180, 180)";
+      wholeList[i].getElementsByClassName("item-name")[0].style.textDecoration="line-through";
+      wholeList[i].setAttribute("class","complete single-item col-xs-10 col-xs-push-1");
+    }
+  });
 
   // remove all completed items
   var clear = document.getElementById("clear");
