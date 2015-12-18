@@ -60,6 +60,7 @@ window.onload = function () {
     checkboxDiv.addEventListener("click", function () {
       this.parentNode.getElementsByClassName("item-name")[0].style.color="rgb(180, 180, 180)";
       this.parentNode.getElementsByClassName("item-name")[0].style.textDecoration="line-through";
+      this.parentNode.setAttribute("class","complete single-item col-xs-10 col-xs-push-1");
       newItem.parentNode.insertBefore(newItem,this.parentNode.lastChild.nextSibling);
     });
 
@@ -88,15 +89,13 @@ window.onload = function () {
 
   // variables and events to change all items on list
 
-  var wholeList = document.getElementsByClassName("single-item");
-  // remove all items
+  // remove all completed items
   var clear = document.getElementById("clear");
   clear.addEventListener("click", function () {
-    var i;
-    for (i = 0; i <= wholeList.length; i++) {
-      list.removeChild(wholeList[0]);
-    };
-    list.removeChild(list.lastChild);
+    var completed = document.getElementsByClassName("complete single-item col-xs-10 col-xs-push-1");
+    while (completed.length > 0) {
+      completed[0].parentNode.removeChild(completed[0]);
+    }
   });
 
 }
