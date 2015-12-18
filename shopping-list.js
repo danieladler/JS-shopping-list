@@ -4,6 +4,8 @@ window.onload = function () {
   var submit = document.getElementById("submit")
   var input  = document.getElementById("input")
 
+    // var realSubmit = document.getElementById("realSubmit")
+
   // possible to set up functions for adding list-item sub-divs upon 'add item'
   // submit, instead of calling entire functions & assignment within the click?
 
@@ -85,17 +87,16 @@ window.onload = function () {
   });
 
   // variables and events to change all items on list
-  wholeList = document.getElementsByClassName("single-item");
 
+  var wholeList = document.getElementsByClassName("single-item");
   // remove all items
   var clear = document.getElementById("clear");
   clear.addEventListener("click", function () {
     var i;
     for (i = 0; i <= wholeList.length; i++) {
-      // console.log(wholeList[i]);
-      list.removeChild(wholeList[i]);
+      list.removeChild(wholeList[0]);
     };
-    list.removeChild(wholeList[0]);
+    list.removeChild(list.lastChild);
   });
 
 }
